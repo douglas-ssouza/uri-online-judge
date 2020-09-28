@@ -16,7 +16,7 @@ namespace Salario
             sal = horas * valor;
 
             Console.WriteLine("NUMBER = " + num);
-            Console.WriteLine("SALARY = U$ " + Math.Round(sal, 2));
+            Console.WriteLine("SALARY = U$ {0}", sal.ToString("0.00"));
         }
     }
 }

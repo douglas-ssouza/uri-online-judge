@@ -13,7 +13,7 @@ namespace SomaSimples
             soma = a + b;
 
             Console.WriteLine("SOMA = " + soma);
-
+            
         }
     }
 }

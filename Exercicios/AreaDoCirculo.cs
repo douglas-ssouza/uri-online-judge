@@ -13,7 +13,7 @@ namespace AreaDoCiruclo
 
             a = PI * Math.Pow(r, 2);
 
-            Console.WriteLine("A = " + Math.Round(a, 4));
+            Console.WriteLine("A={0}", a.ToString("0.0000"));
         }
     }
 }

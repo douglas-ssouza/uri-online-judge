@@ -19,7 +19,7 @@ namespace CalculoSimples
 
             total = ((num1 * valor1) + (num2 * valor2));
 
-            Console.WriteLine("Valor a pagar: R$ " + Math.Round(total, 2));
+            Console.WriteLine("Valor a pagar: R$ {0}", total.ToString("0.00"));
         }
     }
 }

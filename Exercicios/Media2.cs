@@ -14,7 +14,7 @@ namespace Media2
 
             media = ((a * 2) + (b * 3) + (c * 5)) / 10;
 
-            Console.WriteLine("MEDIA = " + Math.Round(media, 1));
+            Console.WriteLine("MEDIA = {0}", media.ToString("0.0"));
         }
     }
 }

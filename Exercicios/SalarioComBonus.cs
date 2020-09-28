@@ -14,7 +14,7 @@ namespace SalarioComBonus
             vendas = Convert.ToDouble(Console.ReadLine());
             total = fixo + (vendas * 0.15);
 
-            Console.WriteLine("TOTAL = " + Math.Round(total, 2));
+            Console.WriteLine("TOTAL = R$ {0}", total.ToString("0.00"));
         }
     }
 }
