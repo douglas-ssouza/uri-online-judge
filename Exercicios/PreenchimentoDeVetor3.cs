@@ -6,19 +6,19 @@ namespace PreenchimentoDeVetor3
     {
         static void Main(string[] args){
 
-            decimal[] n;
-            n = new decimal[100];
+        float[] n;
+        n = new float[100];
 
-            decimal x = System.Convert.ToDecimal(Console.ReadLine());
+        float x = float.Parse(Console.ReadLine());
 
-            for (int i = 0; i < 100; i++){
-                n[i] = x;
-                x /= 2;
-            }
+        for (int i = 0; i < 100; i++){
+            n[i] = x;
+            x /= 2;
+        }
 
-            for (int i = 0; i < 100; i++){
-                Console.WriteLine("N[" + i + "] = {0}", n[i].ToString("0.0000"));
-            }
+        for (int i = 0; i < 100; i++){
+            Console.WriteLine("N[" + i + "] = {0}", n[i].ToString("0.0000"));
+        }
 
         }
     }
