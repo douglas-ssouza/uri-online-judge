@@ -6,33 +6,35 @@ namespace CrescimentoPopulacional
     {
         static void Main(string[] args){
 
-            long t = Convert.ToInt32(Console.ReadLine());
-            long pa, pb;
-            float g1, g2;
-            int anos = 0;
+            int t = Convert.ToInt32(Console.ReadLine());
+
+            int pa, pb, anos = 0;
+            double g1, g2;
 
             for (int i = 0; i < t; i++){
-                string linha = Console.ReadLine();
-                string[] valores = linha.Split(' ');
-                pa = long.Parse(valores[0]);
-                pb = long.Parse(valores[1]);
-                g1 = float.Parse(valores[2]);
-                g2 = float.Parse(valores[3]);
 
-                while (pa < pb){
-                    pa = long.Parse(pa + (pa * g1));
-                    pb = long.Parse(pb + (pb * g2));
+                string[] valores = Console.ReadLine().Split(' ');
+                pa = Convert.ToInt32(valores[0]);
+                pb = Convert.ToInt32(valores[1]);
+                g1 = Convert.ToDouble(valores[2]);
+                g2 = Convert.ToDouble(valores[3]);
+
+                while (pa <= pb && anos <= 100){
+
+                    pa += (int) ((pa * g1) / 100);
+                    pb += (int) ((pa * g2) / 100);
+
                     anos++;
 
-                    if (pa > pb){
-                        Console.WriteLine(ano + " anos.");
-                    }
-
-                    if (anos > 100){
-                        Console.WriteLine("Mais de 1 seculo.");
-                        break;
-                    }
                 }
+
+                if (anos > 100){
+                    Console.WriteLine("Mais de 1 seculo.");
+                }else{
+                    Console.WriteLine(anos + " anos.");
+                } 
+
+                anos = 0;
 
             }
 
