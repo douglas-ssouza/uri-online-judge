@@ -30,7 +30,7 @@ namespace TempoDeUmEvento
 
             int tempoInicio = segInicio + (minInicio * 60) + (horaInicio * 60 * 60) + (diaInicio * 60 * 60 * 24);
             int tempoFim = segFim + (minFim * 60) + (horaFim * 60 * 60) + (diaFim * 60 * 60 * 24);
-            int tempoTotal = tempoFim - tempoInicio
+            int tempoTotal = tempoFim - tempoInicio;
 
             dias = tempoTotal / (60 * 60 * 24);
             tempoTotal = tempoTotal % (60 * 60 * 24);
