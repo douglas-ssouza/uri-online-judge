@@ -7,53 +7,70 @@ namespace ConverterParaHexadecimal
     {
         static void Main(string[] args){
 
-            /**
-            * @author: Douglas Souza
-            * @date: 01/01/2021
-            * @name: Converter para hexadecimal
-            */
-
             int valor = Convert.ToInt32(Console.ReadLine());
-            string caracteres = "";
+            string hexa = "";
 
-            while (valor >= 16)
-            {
-                if (valor % 16 >= 10 && valor % 16 <= 15)
-                {
-                    switch (valor % 16)
-                    {
-                        case 10:
-                            caracteres += 'A'; break;
-                        case 11:
-                            caracteres += 'B'; break;
-                        case 12:
-                            caracteres += 'C'; break;
-                        case 13:
-                            caracteres += 'D'; break;
-                        case 14:
-                            caracteres += 'E'; break;
-                        case 15:
-                            caracteres += 'F'; break;
+            if (valor > 0 && valor < 10){
+                hexa += Convert.ToString(valor);
+            }else if (valor < 16){
+                switch (valor){
+                    case 10:
+                        hexa += "A";
+                        break;
+                    case 11:
+                        hexa += "B";
+                        break;
+                    case 12:
+                        hexa += "C";
+                        break;
+                    case 13:
+                        hexa += "D";
+                        break;
+                    case 14:
+                        hexa += "E";
+                        break;
+                    case 15:
+                        hexa += "F";
+                        break;
+                }
+            }else{
+                while (valor >= 16){
+                    if ((valor % 16 >= 10) && (valor % 16 <= 15)){
+                        switch (valor){
+                            case 10:
+                                hexa += "A";
+                                break;
+                            case 11:
+                                hexa += "B";
+                                break;
+                            case 12:
+                                hexa += "C";
+                                break;
+                            case 13:
+                                hexa += "D";
+                                break;
+                            case 14:
+                                hexa += "E";
+                                break;
+                            case 15:
+                                hexa += "F";
+                                break;
+                        }
+                    }else if (valor % 16 > 0){
+                        hexa += Convert.ToString(valor % 16);
                     }
-                }
-                else
-                {
-                    caracteres += Convert.ToString(valor % 16);
-                }
-                
-                valor = valor / 16;
-                if (valor < 16)
-                {
-                    caracteres += Convert.ToString(valor);
-                }
 
+                    valor = valor / 16;
+
+                    if (valor < 16){
+                        hexa += Convert.ToString(valor / 16);
+                    }
+
+                }                   
             }
+            
 
-            string hexadecimal = new string(caracteres.Reverse().ToArray());
-
-            Console.WriteLine(hexadecimal);
-
-
+            Console.WriteLine(hexa);
 
         }
     }
