@@ -14,7 +14,7 @@ namespace JornadaNasEstrelas
             estrelas = new int[estrelasTotal];
             int louco = 0;
             int maior = 0;
-            
+
             string[] linha = Console.ReadLine().Split(' ');
 
             for (int i = 0; i < estrelasTotal; i++){
@@ -23,6 +23,10 @@ namespace JornadaNasEstrelas
             }
 
             while (louco >= 0 && louco < estrelasTotal){
+
+                if (louco > maior){
+                    maior = louco;
+                }
 
                 if (estrelas[louco] > 0){
                     carneirosTotal--;
@@ -36,10 +40,6 @@ namespace JornadaNasEstrelas
                 }else{
                     estrelas[louco]--;
                     louco++;
-                }
-
-                if (louco > maior){
-                    maior = louco;
                 }
 
            }
