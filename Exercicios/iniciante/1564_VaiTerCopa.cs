@@ -6,17 +6,22 @@ namespace VaiTerCopa
     {
         static void Main(string[] args){
 
-            while (true){
-                int reclamacoes = Convert.ToInt32(Console.ReadLine());
+            int reclamacoes;
+            string linha;
 
-                if (reclamacoes < 0){
+            while (true){
+                linha = Console.ReadLine();
+                if (string.IsNullOrEmpty(linha))
+                {
                     break;
                 }
 
+                reclamacoes = Convert.ToInt32(linha);
+
                 if (reclamacoes == 0){
-                    Console.WriteLine("Vai ter copa!");
+                    Console.WriteLine("vai ter copa!");
                 }else{
-                    Console.WriteLine("Vai ter duas!");
+                    Console.WriteLine("vai ter duas!");
                 }
 
             }
