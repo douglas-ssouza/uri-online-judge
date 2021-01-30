@@ -16,6 +16,8 @@ namespace CorvoContador
                     contador += 1;
                 }else if (input.Equals("*--")){
                     contador += 4;
+                }else if (input.Equals("-*-")){
+                    contador += 2;    
                 }else{
                     Console.WriteLine("caw caw");
                     contador = 0;
